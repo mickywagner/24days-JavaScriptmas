@@ -1,9 +1,17 @@
 function countVowelConsonant(str) {
   const regex = /a|e|i|o|u/
  
-  let mapped = str.split('').map(i => regex.test(i) ? 1 : 2)
-  
-  let sum = mapped.reduce((acc, current) => acc += current)
+//   let mapped = str.split('').map(i => regex.test(i) ? 1 : 2)
+//   let sum = mapped.reduce((acc, current) => acc += current)
+
+    let sum = str.split('').reduce((acc, current) => {
+        if(regex.test(current)) {
+        return acc += 1
+        } else {
+        return acc += 2
+        }
+    }, 0)
+
   
   return sum
   
