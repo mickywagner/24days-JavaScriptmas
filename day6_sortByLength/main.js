@@ -8,6 +8,8 @@ function sortByLength(strs) {
             return 0
         }  
     })
+
+    // return strs.sort((a, b) => a.length - b.length)
 }
 
 
