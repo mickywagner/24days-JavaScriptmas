@@ -1,5 +1,6 @@
 function adjacentElementsProduct(nums) {
-    let product = 0
+    let product = nums[0] * nums[1]
+
     for(let i=1; i < nums.length; i++) {
         let multiplied = nums[i]*nums[i-1]
         if(multiplied > product) {
