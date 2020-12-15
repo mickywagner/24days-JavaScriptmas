@@ -1,8 +1,12 @@
 function validTime(str) {
-    let array = str.split(':')
-    if(parseInt(array[0]) > 24 || parseInt(array[1]) > 59) {
+    let [hours, mins] = str.split(':')
+    if(parseInt(hours) > 23 || parseInt(hours) < 0) {
         return false
-    }
+    } 
+
+    if(parseInt(mins) > 59 || parseInt(mins) < 0) {
+        return false
+    } 
     return true
 }
 
