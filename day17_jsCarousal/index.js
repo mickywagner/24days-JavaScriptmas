@@ -47,7 +47,7 @@ function backFrame() {
      
 }
 
-function changeOpacity() {
+function changeOpacity(move) {
     let currentImage = document.querySelector('.current')
     
     currentImage === images[0] ? previousBtn.style.opacity = .3 : previousBtn.style.opacity = 1
