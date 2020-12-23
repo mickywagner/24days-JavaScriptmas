@@ -1,15 +1,33 @@
-function sumOfTwo(nums1, nums2, value) {
-    let arrayOfSums = []
+// function sumOfTwo(nums1, nums2, value) {
+//     let arrayOfSums = []
     
-    for(let i = 0; i < nums1.length; i++) {
-       for(let j=0; j < nums2.length; j++) {
-           arrayOfSums.push(nums1[i] + nums2[j])
-       }
+//     for(let i = 0; i < nums1.length; i++) {
+//        for(let j=0; j < nums2.length; j++) {
+//            arrayOfSums.push(nums1[i] + nums2[j])
+//        }
+//     }
+
+//     return arrayOfSums.indexOf(value) !== -1 ? true : false
+// }
+
+// Another solution
+
+function sumOfTwo(nums1, nums2, value) {
+    const map = {};
+    
+    for(let num of nums1) {
+        const difference = value - num;
+        map[difference] = difference;
     }
-
-    return arrayOfSums.indexOf(value) !== -1 ? true : false
+    
+    for(let num of nums2) {
+        if(map.hasOwnProperty(num)) {
+            return true;
+        }
+    }
+    
+    return false;
 }
-
 
 
 /**
