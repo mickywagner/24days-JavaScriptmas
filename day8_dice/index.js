@@ -11,14 +11,18 @@ event listeners, Math.random()
 
 // Write your code here 👇
 
+let dice = document.getElementById("dice")
+dice.addEventListener("click", rollDie)
+
 function rollDie(e) {
     const roll = Math.round(Math.random() * 5) + 1
     removeDivs(dice)
+    resetDiceClass()
     addDivs(roll)
-}
+    addFaceClass(roll)
 
-let dice = document.getElementById("dice")
-dice.addEventListener("click", rollDie)
+    
+}
 
 function addDivs(num) {
     let i = 0
@@ -27,27 +31,19 @@ function addDivs(num) {
         dot.classList.add('dot')
         dice.appendChild(dot)
         i++
-    }
-      
+    }     
 }
 
 function removeDivs(myNode) {
     while(myNode.firstChild) {
         myNode.removeChild(myNode.lastChild)
     }
-  
 }
 
+function resetDiceClass() {
+    dice.classList = "dice"
+}
 
-/*
-
-DETAILED INSTRUCTIONS
-1. pick out the neccesary elements from the HTML
-2. Create other 5 dice faces in CSS
-3. use eventlisteners on the appropriate div
-4. Display dice faces randomly on click
-
-STRETCH GOALS:
-- Can you show the number you rolled as a integer along-side the dice face?
-- Can you improve the overall design?
-*/
+function addFaceClass(num) {
+    dice.classList = `dice face-${num}`
+}
