@@ -1,16 +1,3 @@
-/*
-DESCRIPTION:
-In this challenge a casino has asked you to make an online dice that works just like 
-it would in real life. Using the pre-made dice face that represents ‘one’, make the 
-faces for ‘two’, ‘three’, ‘four’, ‘five’ and ‘six’. Now when the users clicks the 
-dice on the screen the dice is expected to show one of the faces randomly.
-
-event listeners, Math.random()
-
-*/
-
-// Write your code here 👇
-
 let dice = document.getElementById("dice")
 dice.addEventListener("click", rollDie)
 
@@ -20,8 +7,7 @@ function rollDie(e) {
     resetDiceClass()
     addDivs(roll)
     addFaceClass(roll)
-
-    
+    addTextRoll(roll)
 }
 
 function addDivs(num) {
@@ -46,4 +32,10 @@ function resetDiceClass() {
 
 function addFaceClass(num) {
     dice.classList = `dice face-${num}`
+}
+
+function addTextRoll(num) {
+    let p = document.getElementById('text')
+    p.textContent = `You rolled a ${num}!`
+    
 }

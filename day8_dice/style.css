@@ -1,8 +1,10 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: #AEB8FE;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -10,8 +12,12 @@ body {
     width: 90px;
     height: 90px;
     border-radius: 10px;
+    padding: 2px;
     background-color: #EFE5DC;
-    margin: 100px 100px 20px 100px;
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dot {
@@ -19,10 +25,57 @@ body {
     height: 20px;
     border-radius: 15px;
     background-color: black;
-    margin: 35px; 
 }
 
-p {
-    font-size: 30px;
-    color: black;
+.face-2,
+.face-3,
+.face-4 {
+   justify-content: space-between;
+   padding: 5px;
 }
+
+.face-2 .dot:first-child,
+.face-3 .dot:first-child {
+    align-self: flex-start;
+}
+
+.face-2 .dot:last-child,
+.face-3 .dot:last-child {
+    align-self: flex-end;
+}
+
+.face-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.face-5 .dot:nth-child(5) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.face-5 .dot:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+
+.face-5 .dot:nth-child(3) {
+     grid-column: 2;
+     grid-row: 2;
+}
+
+
+.face-5 .dot:nth-child(4) {
+     grid-column: 1;
+     grid-row: 3
+}
+
+.face-4, .face-6{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+
